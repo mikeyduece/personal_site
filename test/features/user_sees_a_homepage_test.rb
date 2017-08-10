@@ -8,4 +8,14 @@ class HomepageTest < CapybaraTestCase
     assert_equal 200, page.status_code
   end
 
+  def test_user_recieves_error_msg_from_non_existant_page
+    visit '/rawr'
+
+    assert page.has_content?("Page not found.")
+    assert_equal 404, page.status_code
+  end
+
+  def test_user_can_see_the_about_page
+    visit 
+  end
 end
